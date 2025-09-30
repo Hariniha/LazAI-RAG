@@ -1,7 +1,15 @@
-from alith.lazai import Client
 import requests
+from dotenv import load_dotenv
+import os
+from alith.lazai import Client
 
-client = Client()
+load_dotenv()  # load from .env file
+
+private_key = os.getenv("PRIVATE_KEY")
+if not private_key:
+    raise ValueError("PRIVATE_KEY not found in .env")
+
+client = Client(private_key=private_key)
 node = "0x3717706c2dF083Edd7264a953bBAF24017d49E00" #change this address with one you registered with admin 
 
 try:
@@ -18,7 +26,7 @@ except Exception as e:
 
 print("try to get query account")
 
-url = client.get_query_node(node)[1]
+url = "http://127.0.0.1:8000" 
 print(url)
 headers = client.get_request_headers(node)
 print("request headers:", headers)

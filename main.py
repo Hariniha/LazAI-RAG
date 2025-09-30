@@ -155,7 +155,7 @@ if __name__ == "__main__":
         "--host",
         type=str,
         help="Server host",
-        default="0.0.0.0",
+        default="127.0.0.1",
     )
     parser.add_argument(
         "--port",
