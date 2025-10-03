@@ -41,7 +41,7 @@ logger = logging.getLogger(__name__)
 client = Client(private_key=PRIVATE_KEY)
 app = FastAPI(title="Alith LazAI Privacy Data Query Node", version="1.0.0")
 
-# Try to initialize MilvusStore with error handling
+# # Try to initialize MilvusStore with error handling
 try:
     store = MilvusStore()
     logger.info("MilvusStore initialized successfully")
